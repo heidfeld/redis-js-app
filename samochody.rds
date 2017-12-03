@@ -1,0 +1,308 @@
+
+ECHO "TABELA MARKI SAMOCHODOW"
+
+ECHO "NAZWA"
+SET marki:1:nazwa "Opel"
+SET marki:2:nazwa "BMW"
+SET marki:3:nazwa "Volkswagen"
+SET marki:4:nazwa "Alfa Romeo"
+
+ECHO "ZDJECIE"
+SET marki:1:zdjecie 1
+SET marki:2:zdjecie 2
+SET marki:3:zdjecie 3
+SET marki:4:zdjecie 4
+
+ECHO "TABELA SAMOCHODY"
+
+ECHO "WSZYSTKIE SAMOCHODY"
+HSET samochody 1 4
+HSET samochody 2 1
+HSET samochody 3 2
+HSET samochody 4 3
+
+ECHO "NAZWA"
+SET samochody:1:nazwa "159"
+SET samochody:2:nazwa "Astra G"
+SET samochody:3:nazwa "E46"
+SET samochody:4:nazwa "Golf IV"
+
+ECHO "MARKA"
+SET samochody:1:marka 4
+SET samochody:2:marka 1
+SET samochody:3:marka 2
+SET samochody:4:marka 3
+
+ECHO "ROK PRODUKCJI OD"
+SET samochody:1:rok:od 2004
+SET samochody:2:rok:od 1998
+SET samochody:3:rok:od 1998
+SET samochody:4:rok:od 1997
+
+ECHO "ROK PRODUKCJI DO"
+SET samochody:1:rok:do 2011
+SET samochody:2:rok:do 2009
+SET samochody:3:rok:do 2007
+SET samochody:4:rok:do 2006
+
+ECHO "JEDNOSTKI SILNIKA (POSORTOWANY SET Z DOSTEPNYMI JEDNOSTKAMI)"
+ZADD samochody:1:jednostki 1.8 1
+ZADD samochody:1:jednostki 1.9 2
+ZADD samochody:1:jednostki 2.2 3
+ZADD samochody:1:jednostki 3.2 4
+ZADD samochody:1:jednostki 1.9 5
+ZADD samochody:1:jednostki 2.0 6
+ZADD samochody:1:jednostki 2.4 7
+
+ZADD samochody:2:jednostki 1.2 8
+ZADD samochody:2:jednostki 1.4 9
+ZADD samochody:2:jednostki 1.4 10
+ZADD samochody:2:jednostki 1.6 11
+ZADD samochody:2:jednostki 2.0 12
+ZADD samochody:2:jednostki 1.7 13
+ZADD samochody:2:jednostki 2.0 14
+
+ZADD samochody:3:jednostki 1.9 15
+ZADD samochody:3:jednostki 2.0 16
+ZADD samochody:3:jednostki 2.8 17
+ZADD samochody:3:jednostki 3.0 18
+ZADD samochody:3:jednostki 3.2 19
+ZADD samochody:3:jednostki 2.0 20
+ZADD samochody:3:jednostki 3.0 21
+
+ZADD samochody:4:jednostki 1.4 22
+ZADD samochody:4:jednostki 1.6 23
+ZADD samochody:4:jednostki 2.0 24
+ZADD samochody:4:jednostki 1.9 25
+ZADD samochody:4:jednostki 1.9 26
+
+ECHO "TYPY NADWOZIA (SET Z DOSTEPNYMI TYPAMI)"
+SADD samochody:1:nadwodzia 1
+SADD samochody:1:nadwodzia 3
+
+SADD samochody:2:nadwodzia 2
+SADD samochody:2:nadwodzia 7
+SADD samochody:2:nadwodzia 4
+SADD samochody:2:nadwodzia 1
+SADD samochody:2:nadwodzia 3
+
+SADD samochody:3:nadwodzia 5
+SADD samochody:3:nadwodzia 2
+SADD samochody:3:nadwodzia 1
+SADD samochody:3:nadwodzia 3
+
+SADD samochody:4:nadwodzia 6
+SADD samochody:4:nadwodzia 3
+
+ECHO "LICZBA DRZWI NADWOZIA (TABLICA ASOCJACYJNA TYP NADWOZIA - LICZBA DRZWI)"
+HSET samochody:1:drzwi 1 4
+HSET samochody:1:drzwi 3 5
+
+HSET samochody:2:drzwi 2 2
+HSET samochody:2:drzwi 7 2
+HSET samochody:2:drzwi 4 5
+HSET samochody:2:drzwi 1 4
+HSET samochody:2:drzwi 3 5
+
+HSET samochody:3:drzwi 5 3
+HSET samochody:3:drzwi 2 2
+HSET samochody:3:drzwi 1 5
+HSET samochody:3:drzwi 3 5
+
+HSET samochody:4:drzwi 6 5
+HSET samochody:4:drzwi 8 3
+HSET samochody:4:drzwi 3 5
+
+ECHO "POJEMNOSC BAGAZNIKA DLA KONKRETNEGO NADWOZIA"
+HSET samochody:1:bagaznik 1 405
+HSET samochody:1:bagaznik 3 445
+
+HSET samochody:2:bagaznik 2 460
+HSET samochody:2:bagaznik 7 460
+HSET samochody:2:bagaznik 4 370
+HSET samochody:2:bagaznik 1 460
+HSET samochody:2:bagaznik 3 480
+
+HSET samochody:3:bagaznik 5 435
+HSET samochody:3:bagaznik 2 435
+HSET samochody:3:bagaznik 1 440
+HSET samochody:3:bagaznik 3 435
+
+HSET samochody:4:bagaznik 6 330
+HSET samochody:4:bagaznik 8 330
+HSET samochody:4:bagaznik 3 460
+
+ECHO "ROZSTAW OSI"
+SET samochody:1:rozstaw 2700
+SET samochody:2:rozstaw 2610
+SET samochody:3:rozstaw 2725
+SET samochody:4:rozstaw 2512
+
+ECHO "POJEMNOSC BAKU"
+SET samochody:1:bak 70
+SET samochody:2:bak 52
+SET samochody:3:bak 63
+SET samochody:4:bak 55
+
+ECHO "ZDJECIA SAMOCHODOW"
+SET samochody:1:zdjecia 1
+SET samochody:2:zdjecia 2
+SET samochody:3:zdjecia 3
+SET samochody:4:zdjecia 4
+
+ECHO "LISTA PODZESPOLOW (HYPERLOGLOG ZAWIERAJACY DOSTEPNE NUMERY CZESCI  MODELU)"
+PFADD samochody:1:podzespoly "OLGEBP357"
+PFADD samochody:1:podzespoly "FFSDYV274"
+PFADD samochody:1:podzespoly "FHOHUU83"
+PFADD samochody:1:podzespoly "CVGJWH360"
+PFADD samochody:1:podzespoly "YHENBF496"
+PFADD samochody:1:podzespoly "DHTLCA21"
+PFADD samochody:1:podzespoly "ESNEWH929"
+PFADD samochody:1:podzespoly "TMNYQS482"
+PFADD samochody:1:podzespoly "DOVMAG181"
+PFADD samochody:1:podzespoly "RTZOIT984"
+PFADD samochody:2:podzespoly "DNANKH401"
+PFADD samochody:2:podzespoly "ZTKXJI939"
+PFADD samochody:2:podzespoly "RHPHMV167"
+PFADD samochody:2:podzespoly "GJIVUM483"
+PFADD samochody:2:podzespoly "WUUGFT863"
+PFADD samochody:2:podzespoly "LOBFOU810"
+PFADD samochody:2:podzespoly "FNBXHB195"
+PFADD samochody:2:podzespoly "OJFOPP628"
+PFADD samochody:2:podzespoly "RGXUQS988"
+PFADD samochody:2:podzespoly "KNEDIO330"
+PFADD samochody:3:podzespoly "WUMYZS994"
+PFADD samochody:3:podzespoly "QNVOEI503"
+PFADD samochody:3:podzespoly "IEGHHZ523"
+PFADD samochody:3:podzespoly "VFJPWE68"
+PFADD samochody:3:podzespoly "ICCGHS138"
+PFADD samochody:3:podzespoly "COXKFW595"
+PFADD samochody:3:podzespoly "WKMKCZ867"
+PFADD samochody:3:podzespoly "SAIOCU123"
+PFADD samochody:3:podzespoly "DSTHFG896"
+PFADD samochody:3:podzespoly "LNEQIJ383"
+PFADD samochody:4:podzespoly "DJBRHU889"
+PFADD samochody:4:podzespoly "XSKEQI718"
+PFADD samochody:4:podzespoly "GTLYJK890"
+PFADD samochody:4:podzespoly "HLTPSE828"
+PFADD samochody:4:podzespoly "EVYRBC625"
+PFADD samochody:4:podzespoly "ALPMRX889"
+PFADD samochody:4:podzespoly "NYPFRM453"
+PFADD samochody:4:podzespoly "ICMIIM461"
+PFADD samochody:4:podzespoly "SHWIWV265"
+PFADD samochody:4:podzespoly "XWXAZR397"
+
+ECHO "TABELA RODZAJ NAPEDU (BIT NA PIERWSZEJ POZYCJI, 0 = TYLNI, 1 = PRZEDNI)"
+SETBIT samochody:1:naped 0 1
+SETBIT samochody:2:naped 0 1
+SETBIT samochody:3:naped 0 0
+SETBIT samochody:4:naped 0 1
+
+ECHO "TEST EURO NCAP"
+SET samochody:1:euroncap 5
+SET samochody:2:euroncap 4
+SET samochody:3:euroncap 4
+SET samochody:4:euroncap 4
+
+ECHO "TABELA JEDNOSTKI SILNIKOWE"
+
+ECHO "NAZWA"
+SET jednostki:1:nazwa "1.8 MPI"
+SET jednostki:2:nazwa "1.9 JTS"
+SET jednostki:3:nazwa "2.2 JTS"
+SET jednostki:4:nazwa "3.2 JTS"
+SET jednostki:5:nazwa "1.9 JTD"
+SET jednostki:6:nazwa "2.0 JTD"
+SET jednostki:7:nazwa "2.4 JTD"
+SET jednostki:8:nazwa "1.2 16V"
+SET jednostki:9:nazwa "1.4 8V"
+SET jednostki:10:nazwa "1.4 16V"
+SET jednostki:11:nazwa "1.6 16V"
+SET jednostki:12:nazwa "2.0 16V"
+SET jednostki:13:nazwa "1.7 8V TD"
+SET jednostki:14:nazwa "2.0 16V DTI"
+SET jednostki:15:nazwa "1.9 318i"
+SET jednostki:16:nazwa "2.0 320i"
+SET jednostki:17:nazwa "2.8 328i"
+SET jednostki:18:nazwa "3.0 330i"
+SET jednostki:19:nazwa "3.2 M3"
+SET jednostki:20:nazwa "2.0 320d"
+SET jednostki:21:nazwa "3.0 330d"
+SET jednostki:22:nazwa "1.4 16V"
+SET jednostki:23:nazwa "1.6 16V"
+SET jednostki:24:nazwa "2.0"
+SET jednostki:25:nazwa "1.9 SDI"
+SET jednostki:26:nazwa "1.9 TDI"
+
+ECHO "MOC"
+SET jednostki:1:moc 140
+SET jednostki:2:moc 160
+SET jednostki:3:moc 185
+SET jednostki:4:moc 260
+SET jednostki:5:moc 150
+SET jednostki:6:moc 170
+SET jednostki:7:moc 210
+SET jednostki:8:moc 65
+SET jednostki:9:moc 70
+SET jednostki:10:moc 90
+SET jednostki:11:moc 100
+SET jednostki:12:moc 136
+SET jednostki:13:moc 68
+SET jednostki:14:moc 101
+SET jednostki:15:moc 118
+SET jednostki:16:moc 150
+SET jednostki:17:moc 193
+SET jednostki:18:moc 231
+SET jednostki:19:moc 343
+SET jednostki:20:moc 150
+SET jednostki:21:moc 184
+SET jednostki:22:moc 75
+SET jednostki:23:moc 105
+SET jednostki:24:moc 116
+SET jednostki:25:moc 68
+SET jednostki:26:moc 110
+
+ECHO "TABELA TYPY NADWOZIA"
+
+ECHO "NAZWA"
+SET nadwozie:1:nazwa "sedan"
+SET nadwozie:2:nazwa "kabriolet" 
+SET nadwozie:3:nazwa "kombi"
+SET nadwozie:4:nazwa "liftback"
+SET nadwozie:5:nazwa "compact"
+SET nadwozie:6:nazwa "hatchback"
+SET nadwozie:7:nazwa "coupe"
+SET nadwozie:8:nazwa "hatchback_sport"
+
+ECHO "TABELA ZDJECIE"
+
+ECHO "URL"
+SET zdjecie:1:url "https://upload.wikimedia.org/wikipedia/commons/1/11/Opel-Logo-2011-Vector.svg"
+SET zdjecie:2:url "https://en.wikipedia.org/wiki/BMW#/media/File:BMW.svg"
+SET zdjecie:3:url "https://upload.wikimedia.org/wikipedia/commons/a/a1/Volkswagen_Logo_till_1995.svg"
+SET zdjecie:4:url "https://en.wikipedia.org/wiki/Alfa_Romeo#/media/File:Alfa_Romeo_logo.png"
+
+ECHO "OPIS"
+SET zdjecie:1:opis "Logo marki OPEL"
+SET zdjecie:2:opis "Logo marki BMW"
+SET zdjecie:3:opis "Logo marki VOLKSWAGEN"
+SET zdjecie:4:opis "Logo marki ALFA ROMEO"
+
+ECHO "TABELA ZDJECIA SAMOCHODOW (LISTA ZE ZDJECIAMI DLA KONKRETNYCH MODELI)"
+RPUSH zdjecia:1:url "http://bi.gazeta.pl/im/5/7905/z7905285IER,Alfa-Romeo-159.jpg"
+RPUSH zdjecia:1:url "http://cdn.johnywheels.com/2015/10/15/alfaromeo159ti-l-687a36cd3c6063b2.jpg"
+RPUSH zdjecia:1:url "http://bi.gazeta.pl/im/7/8827/z8827307IE,Alfa-Romeo-159.jpg"
+
+RPUSH zdjecia:2:url "https://i.ytimg.com/vi/AC3cRiCY23o/maxresdefault.jpg"
+RPUSH zdjecia:2:url "https://img.chceauto.pl/opel/astra/opel-astra-coupe-1792-9558_v1.jpg"
+RPUSH zdjecia:2:url "https://img.chceauto.pl/opel/astra/opel-astra-coupe-1792-9556_v1.jpg"
+
+RPUSH zdjecia:3:url "https://media.licdn.com/mpr/mpr/p/3/005/0ae/38d/01bc5fa.jpg"
+RPUSH zdjecia:3:url "https://a.d-cd.net/98cbca1s-480.jpg"
+RPUSH zdjecia:3:url "http://trends.com.pl/wp-content/uploads/2017/06/37796-a-bmw-1024x647.jpg"
+
+RPUSH zdjecia:4:url "http://www.autoscout24.pl/samochod/files/2015/03/vw-golf-4-s-02.jpg"
+RPUSH zdjecia:4:url "http://pictures.trader.pl/eurotax/pictures/2/e6/c77f846f72a7e169fb646cb677d7b481.jpg"
+RPUSH zdjecia:4:url "https://i.wpimg.pl/985x0/m.autokult.pl/2001-volkswagen-golf-iv--b3f704e.jpg"
+
+ECHO "ZAIMPORTOWANO BAZE REDIS"
